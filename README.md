@@ -1,7 +1,11 @@
-# Voice AI Assistant
+# Voxa AI — Voice Assistant
 
-An AI-powered voice assistant with real-time speech recognition and natural language responses using the Google Gemini API.  
-Built with **React**, **Node.js**, **Express**, and **MongoDB**.
+Voxa AI is a full-stack AI-powered voice assistant that enables real-time speech interaction with intelligent responses. It integrates modern web technologies with advanced AI capabilities to deliver a seamless conversational experience.
+
+# Overview
+
+Voxa AI allows users to interact using voice commands, process natural language using Google Gemini API, and receive spoken responses in real time.
+Designed with a modern UI/UX and scalable architecture, this project demonstrates full-stack development, AI integration, and real-time interaction systems.
 
 ## Features
 - 🎙️ **Voice Command Recognition** with wake word detection.
