@@ -57,8 +57,8 @@ export default function SignIn() {
         >
           <img
             src={bg}
-            alt="AI Assistant"
-            className="w-2/4 drop-shadow-[0_0_20px_#836fff] rounded-full"
+            alt="Voxa AI"
+            className="w-2/4 drop-shadow-[0_0_20px_#22d3ee] rounded-full"
           />
         </motion.div>
 
@@ -70,8 +70,8 @@ export default function SignIn() {
             transition={{ duration: 0.4, delay: 0.2 }}
             className="w-full max-w-md backdrop-blur-sm bg-white/5 p-8 rounded-xl border border-white/10 shadow-lg"
           >
-            <h1 className="text-3xl font-semibold text-white mb-2">Welcome Back 👋</h1>
-            <p className="text-sm text-gray-300 mb-6">Sign in to your assistant dashboard</p>
+            <h1 className="text-3xl font-black text-gradient mb-2 tracking-tighter">Welcome Back 👋</h1>
+            <p className="text-sm text-gray-400 mb-6">Sign in to your Voxa AI dashboard</p>
 
             <form className="space-y-4" onSubmit={handleSubmit}>
               <input
@@ -97,9 +97,9 @@ export default function SignIn() {
               />
               <button
                 type="submit"
-                className="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 rounded-lg transition"
+                className="w-full voxa-gradient hover:opacity-90 text-white font-bold py-3 rounded-lg transition shadow-lg shadow-cyan-500/20"
               >
-                {loading ? 'Signing In...' : 'Sign In'}
+                {loading ? 'Authenticating...' : 'Sign In'}
               </button>
             </form>
 

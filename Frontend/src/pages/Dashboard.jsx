@@ -58,43 +58,75 @@ const Dashboard = () => {
   return (
     <div className="relative min-h-screen bg-black text-white flex flex-col items-center justify-center px-6 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(125%_125%_at_50%_10%,#0f0c29_30%,#302b63_70%,#24243e_100%)]"></div>
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#4f4f4f20_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[length:14px_24px]"></div>
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(125%_125%_at_50%_10%,#0f0c29_30%,#1a1a2e_70%,#000000_100%)]"></div>
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#4f4f4f20_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[length:24px_24px]"></div>
 
-      {/* Status */}
-      <div className="absolute top-4 left-4 text-xs text-gray-400">
-        {isListening ? `Listening for "${wakeWord}"...` : "Not listening"}
-      </div>
+      {/* Main Dashboard Card */}
+      <div className="glass-card p-12 rounded-[2.5rem] flex flex-col items-center max-w-2xl w-full relative group">
+        {/* Status Indicator */}
+        <div className="absolute top-6 right-8 flex items-center space-x-2">
+          <div className={`h-2 w-2 rounded-full ${isListening ? "bg-cyan-400 animate-pulse shadow-[0_0_10px_#22d3ee]" : "bg-gray-600"}`}></div>
+          <span className="text-[10px] uppercase tracking-widest text-gray-400 font-bold">
+            {isListening ? "System Active" : "Standby"}
+          </span>
+        </div>
 
-      {/* Main Content */}
-      <h1 className="text-4xl font-extrabold text-cyan-400 mb-2 text-center">
-        Welcome Back!
-      </h1>
-      <p className="text-gray-300 mb-8 text-lg text-center">
-        Say “{wakeWord} ...” to talk to your assistant. 🚀
-      </p>
+        <h1 className="text-5xl font-black text-gradient mb-2 text-center tracking-tighter">
+          Voxa AI
+        </h1>
+        <p className="text-gray-400 mb-10 text-sm font-medium tracking-wide uppercase">
+          Your Personal Audio Interface
+        </p>
 
-      {/* Avatar */}
-      <div className="group relative h-48 w-48 rounded-full p-[4px]">
-        <div className="absolute inset-0 rounded-full border-4 border-cyan-500 opacity-80 group-hover:opacity-0 transition"></div>
-        <div className="rainbow-ring absolute inset-0 rounded-full"></div>
-        {assistantAvatar ? (
-          <img
-            src={assistantAvatar}
-            alt="Assistant Avatar"
-            className="relative z-10 h-full w-full rounded-full object-cover shadow-lg group-hover:scale-[1.03] transition-transform duration-300"
-          />
-        ) : (
-          <div className="relative z-10 h-full w-full rounded-full bg-gray-700 flex items-center justify-center text-sm text-gray-300">
-            No Avatar
+        {/* Avatar Section with Pulse */}
+        <div className={`relative h-56 w-56 rounded-full p-1 transition-all duration-500 ${isListening ? "voice-pulse scale-105" : "scale-100"}`}>
+          <div className="absolute inset-0 rounded-full border border-white/10"></div>
+          <div className="rainbow-ring absolute inset-0 rounded-full group-hover:opacity-100 opacity-50 transition-opacity"></div>
+          
+          <div className="relative h-full w-full rounded-full overflow-hidden border-2 border-white/5 shadow-2xl">
+            {assistantAvatar ? (
+              <img
+                src={assistantAvatar}
+                alt="Voxa Assistant"
+                className={`h-full w-full object-cover transition-transform duration-700 ${isListening ? "scale-110 rotate-3" : "scale-100"}`}
+              />
+            ) : (
+              <div className="h-full w-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center text-gray-500">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                </svg>
+              </div>
+            )}
           </div>
-        )}
-      </div>
+        </div>
 
-      <h2 className="text-2xl font-bold mt-4 text-cyan-300">
-        {assistantName || "Assistant"}
-      </h2>
-      <p className="text-gray-400 text-sm mt-2">Your AI Assistant</p>
+        <div className="mt-8 text-center">
+          <h2 className="text-2xl font-bold bg-white bg-clip-text text-transparent">
+            {assistantName || "Voxa Assistant"}
+          </h2>
+          <p className="text-cyan-400/80 text-sm mt-3 font-medium flex items-center justify-center gap-2">
+            {isListening ? (
+              <span className="flex items-center gap-2">
+                <span className="animate-bounce">●</span> Listening for "{wakeWord}"
+              </span>
+            ) : (
+              `Say "${wakeWord}" to activate`
+            )}
+          </p>
+        </div>
+
+        {/* Action Tips */}
+        <div className="mt-10 grid grid-cols-2 gap-4 w-full">
+          <div className="bg-white/5 border border-white/5 p-4 rounded-2xl text-center">
+            <p className="text-[10px] text-gray-500 uppercase font-black mb-1">Capabilities</p>
+            <p className="text-xs text-gray-300">Natural Voice Chat</p>
+          </div>
+          <div className="bg-white/5 border border-white/5 p-4 rounded-2xl text-center">
+            <p className="text-[10px] text-gray-500 uppercase font-black mb-1">Response</p>
+            <p className="text-xs text-gray-300">Ultra-Low Latency</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

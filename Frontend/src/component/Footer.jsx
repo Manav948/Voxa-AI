@@ -11,14 +11,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent">
-                AI Assistant
+              <div className="text-xl font-black text-gradient">
+                Voxa AI
               </div>
               <span className="text-cyan-400">✨</span>
             </Link>
             <p className="text-gray-400 text-sm">
-              Your intelligent virtual assistant powered by advanced AI technology. 
-              Streamline your daily tasks with ease and precision.
+              Your intelligent virtual assistant powered by Voxa AI technology. 
+              Elevate your productivity with voice-powered precision.
             </p>
           </div>
 
@@ -88,7 +88,7 @@ export default function Footer() {
 
         <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} AI Assistant. All rights reserved.
+            © {new Date().getFullYear()} Voxa AI. All rights reserved.
           </p>
           <div className="flex items-center space-x-4">
             <a

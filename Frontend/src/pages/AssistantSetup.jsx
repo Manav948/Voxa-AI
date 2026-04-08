@@ -38,9 +38,9 @@ const AssistantSetup = () => {
     return (
         <div className="min-h-screen bg-black text-white px-6 py-12">
             <div className="max-w-xl mx-auto text-center">
-                <h1 className="text-4xl font-bold text-cyan-400 mb-6">
-                    Setup Your Virtual Assistant 🤖
-                </h1>
+        <h1 className="text-4xl font-black text-gradient mb-6 tracking-tighter">
+          Meet Your Voxa AI 🤖
+        </h1>
 
                 {avatar && (
                     <img
@@ -60,9 +60,9 @@ const AssistantSetup = () => {
 
                 <button
                     onClick={handleContinue}
-                    className="px-6 py-3 bg-indigo-500 hover:bg-indigo-600 text-white font-semibold rounded-lg transition"
+                    className="px-10 py-4 voxa-gradient hover:opacity-90 text-white font-black rounded-2xl transition shadow-xl shadow-cyan-500/20"
                 >
-                    Continue
+                    Initialize Assistant
                 </button>
             </div>
         </div>

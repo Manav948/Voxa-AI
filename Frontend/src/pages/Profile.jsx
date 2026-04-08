@@ -37,8 +37,8 @@ const Profile = () => {
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#4f4f4f20_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[length:14px_24px]"></div>
 
       <div className="max-w-4xl mx-auto text-center">
-        <h1 className="text-4xl font-extrabold text-cyan-400 mb-6">
-          Choose Your AI Assistant Avatar 💡
+        <h1 className="text-4xl font-black text-gradient mb-6 tracking-tighter">
+          Personalize Your Voxa AI 💡
         </h1>
         <p className="text-gray-300 mb-10">
           Upload your own avatar or pick one from our collection.
@@ -80,9 +80,9 @@ const Profile = () => {
 
         <button
           onClick={handleNext}
-          className="mt-6 px-6 py-3 bg-indigo-500 hover:bg-indigo-600 text-white font-semibold rounded-lg transition"
+          className="mt-6 px-10 py-4 voxa-gradient hover:opacity-90 text-white font-black rounded-2xl transition shadow-xl shadow-cyan-500/20"
         >
-          Next ➡
+          Continue to Setup ➡
         </button>
       </div>
     </div>

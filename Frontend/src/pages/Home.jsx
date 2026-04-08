@@ -4,16 +4,16 @@ import bot from "../assets/home.png";
 
 const features = [
   {
-    title: "Smart Conversations",
-    desc: "Ask questions, get instant answers, and have natural conversations powered by AI.",
+    title: "Voice-First Intelligence",
+    desc: "Natural voice interactions powered by Voxa AI for a truly hands-free experience.",
   },
   {
-    title: "Task Automation",
-    desc: "Let the assistant handle reminders, notes, and repetitive daily tasks.",
+    title: "Intelligent Automation",
+    desc: "Let Voxa handle your scheduling, notes, and workflows with autonomous precision.",
   },
   {
-    title: "Always Available",
-    desc: "Your assistant works 24/7 so you never miss anything important.",
+    title: "Always in Sync",
+    desc: "Your Voxa AI assistant is available across all your devices, 24/7.",
   },
 ];
 
@@ -31,14 +31,14 @@ export default function Home() {
           transition={{ duration: 0.7 }}
           className="w-full md:w-1/2 mt-28 md:mt-0"
         >
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-            Your Virtual Assistant <br />
-            <span className="text-cyan-400">Smarter. Faster. Easier.</span>
+          <h1 className="text-4xl md:text-7xl font-black leading-tight mb-6 tracking-tighter">
+            Elevate with <br />
+            <span className="text-gradient">Voxa AI</span>
           </h1>
 
-          <p className="text-gray-300 mb-8 text-lg max-w-xl">
-            Let our intelligent assistant help you streamline your daily tasks,
-            manage information, and boost productivity with ease.
+          <p className="text-gray-300 mb-8 text-xl max-w-xl font-light">
+            Experience the next generation of personal assistance. 
+            Voxa AI streamlines your world with intelligent voice-powered productivity.
           </p>
 
           <div className="flex items-center gap-4">
@@ -190,11 +190,11 @@ export default function Home() {
           viewport={{ once: true }}
           className="rounded-3xl border border-blue-400/20 bg-blue-500/10 p-12 text-center backdrop-blur-xl"
         >
-          <h3 className="text-2xl md:text-3xl font-bold mb-4">
-            Ready to experience the future?
+          <h3 className="text-2xl md:text-4xl font-black mb-4">
+            Step into the future.
           </h3>
-          <p className="text-gray-300 mb-8">
-            Start using your personal AI assistant today.
+          <p className="text-gray-300 mb-8 text-lg font-light">
+            Join thousands of users who have upgraded their daily workflow with Voxa AI.
           </p>
           <Link
             to="/signup"

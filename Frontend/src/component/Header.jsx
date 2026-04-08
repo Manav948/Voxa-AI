@@ -32,10 +32,10 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent">
-              AI Assistant
+            <div className="text-2xl font-black text-gradient tracking-tight">
+              Voxa AI
             </div>
-            <span className="text-cyan-400 text-xl">✨</span>
+            <span className="text-cyan-400 text-xl group-hover:scale-125 transition-transform duration-300">✨</span>
           </Link>
 
           <nav className="hidden md:flex items-center space-x-6">

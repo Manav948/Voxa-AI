@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import bg from '../assets/sign-up.png'
 import api from '../lib/axios.js'
@@ -7,6 +7,7 @@ import { toast } from "react-hot-toast";
 export default function SignUp() {
     const [form, setForm] = useState({ username: '', email: '', password: '' });
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value })
     }
@@ -14,8 +15,9 @@ export default function SignUp() {
         e.preventDefault();
         setLoading(true);
         try {
-            await api.post("/api/auth/signUp", form);
+            await api.post("/api/auth/signup", form);
             toast.success("signUp successful! Please log in.");
+            navigate("/signin")
         } catch (error) {
             console.log("Error during sign up:", error);
             toast.error(error.response?.data?.message || "Sign up failed.");
@@ -51,8 +53,8 @@ export default function SignUp() {
                         transition={{ duration: 0.4, delay: 0.2 }}
                         className="w-full max-w-md backdrop-blur-sm bg-white/5 p-8 rounded-xl border border-white/10 shadow-lg"
                     >
-                        <h1 className="text-3xl font-semibold text-white mb-2">Create an Account 🎉</h1>
-                        <p className="text-sm text-gray-300 mb-6">Sign up to get started with your assistant</p>
+                        <h1 className="text-3xl font-black text-gradient mb-2 tracking-tighter">Create an Account 🎉</h1>
+                        <p className="text-sm text-gray-400 mb-6">Join the future of personal assistance with Voxa AI</p>
 
                         <form className="space-y-4" onSubmit={handleSubmit}>
                             <input
@@ -88,9 +90,9 @@ export default function SignUp() {
                             />
                             <button
                                 type="submit"
-                                className="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-3 rounded-lg transition"
+                                className="w-full voxa-gradient hover:opacity-90 text-white font-bold py-3 rounded-lg transition shadow-lg shadow-cyan-500/20"
                             >
-                                Sign Up
+                                {loading ? 'Creating Account...' : 'Sign Up'}
                             </button>
                         </form>
 

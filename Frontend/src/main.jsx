@@ -9,16 +9,19 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <AuthProvider>
-        <div className="absolute inset-0 z-10 h-full w-full items-center [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]">
+        <div className="min-h-screen w-full bg-black">
           <App />
           <Toaster
             position="top-center"
             reverseOrder={false}
             toastOptions={{
-              className: 'bg-gray-800 text-white',
+              className: "glass-card text-white border-white/10",
               style: {
-                fontSize: '16px',
-                padding: '10px 20px',
+                background: "rgba(0, 0, 0, 0.8)",
+                backdropFilter: "blur(12px)",
+                color: "#fff",
+                borderRadius: "16px",
+                border: "1px solid rgba(255, 255, 255, 0.1)",
               },
             }}
           />

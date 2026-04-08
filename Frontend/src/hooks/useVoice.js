@@ -32,13 +32,21 @@ export default function useVoice(wakeWord = "jarvis") {
         };
         // this event is triggered when the recognition fn returns an error
         recognition.onerror = (event) => {
+            if (event.error === "no-speech") {
+                // Quietly restart for no-speech
+                errorCooldownRef.current = true;
+                safeStop();
+                restartAfterDelay(1000);
+                return;
+            }
+            
             console.error("Speech recognition error:", event.error);
             if (event.error === "network") {
                 errorCooldownRef.current = true;
                 safeStop();
                 restartAfterDelay(5000);
             }
-            if (event.error === "no-speech" || event.error === "audio-capture") {
+            if (event.error === "audio-capture") {
                 errorCooldownRef.current = true;
                 safeStop();
                 restartAfterDelay(1500);
